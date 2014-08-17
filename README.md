@@ -27,6 +27,8 @@ Then browse to your project's root at port 4000 (default).
 This app currently assumes it is located in a dedicated directory in your app root! If you move it,
 please adjust the `:database` setting to account for the move. Otherwise it WILL NOT WORK!
 
+You can leave this running in the background and open a new terminal window to work in, or you can exit
+this app with `Ctrl+C` to free up your current terminal, just like `rails server`.
 
 Settings
 -----------
