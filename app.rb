@@ -3,7 +3,7 @@ require 'sinatra/activerecord'
 
 set :bind, '0.0.0.0'
 set :port, 4000
-set :database, "sqlite3:../db/development.sqlite3"
+set :database, "sqlite3:db/development.sqlite3"
 
 get '/' do
   @dbtables = ActiveRecord::Base.connection.tables
