@@ -5,9 +5,11 @@ set :bind, '0.0.0.0'
 set :port, 4000
 set :database, "sqlite3:db/development.sqlite3"
 
+$excluded_tables = ["schema_migrations"]
+
 get '/' do
   @dbtables = ActiveRecord::Base.connection.tables
-  @dbtables.delete_if { |t| t == "schema_migrations" }
+  @dbtables.delete_if { |t| $excluded_tables.include? t }
   erb :dblist, :layout => :layout
 end
 
